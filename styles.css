@@ -2,8 +2,11 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --primary:   #1a56db;
-  --primary-dark: #1041a8;
+  --primary:        #006D37;
+  --primary-dark:   #004d27;
+  --primary-bg:     #041627;
+  --primary-container: #1A2B3C;
+  --secondary-container: #6BFE9C;
   --accent:    #f59e0b;
   --text:      #1f2937;
   --muted:     #6b7280;
@@ -27,12 +30,12 @@ body {
 
 /* ─── Nav ─── */
 header {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
+  background: var(--primary-bg);
+  border-bottom: 1px solid var(--primary-container);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 1px 8px rgba(0,0,0,.06);
+  box-shadow: 0 1px 8px rgba(0,0,0,.25);
 }
 
 .nav-inner {
@@ -50,18 +53,19 @@ header {
   align-items: center;
   gap: 0.55rem;
   text-decoration: none;
-  color: var(--text);
+  color: #fff;
   font-weight: 700;
   font-size: 1.15rem;
 }
 
-.logo svg { color: var(--primary); }
+.logo svg { color: var(--secondary-container); }
+.logo-check { stroke: var(--primary-bg); }
 
 nav { display: flex; gap: 0.25rem; }
 
 nav a {
   text-decoration: none;
-  color: var(--muted);
+  color: rgba(255,255,255,.65);
   font-size: 0.9rem;
   font-weight: 500;
   padding: 0.45rem 0.9rem;
@@ -70,13 +74,13 @@ nav a {
 }
 
 nav a:hover, nav a.active {
-  background: #eff6ff;
-  color: var(--primary);
+  background: rgba(255,255,255,.1);
+  color: var(--secondary-container);
 }
 
 /* ─── Hero (index only) ─── */
 .hero {
-  background: linear-gradient(135deg, #1a56db 0%, #1d4ed8 50%, #0f3cb8 100%);
+  background: linear-gradient(135deg, #041627 0%, #1A2B3C 55%, #041627 100%);
   color: #fff;
   text-align: center;
   padding: 5rem 1.5rem 4rem;
@@ -166,8 +170,8 @@ nav a:hover, nav a.active {
   justify-content: center;
 }
 
-.card-icon.blue { background: #eff6ff; color: var(--primary); }
-.card-icon.green { background: #f0fdf4; color: #16a34a; }
+.card-icon.blue { background: #e8eef5; color: var(--primary-bg); }
+.card-icon.green { background: #e6f4ed; color: var(--primary); }
 
 .card h2 { font-size: 1.2rem; font-weight: 700; }
 .card p  { color: var(--muted); font-size: 0.9rem; }
@@ -184,7 +188,7 @@ nav a:hover, nav a.active {
 
 /* ─── Page layout (terms / privacy) ─── */
 .page-hero {
-  background: linear-gradient(135deg, #1a56db, #1d4ed8);
+  background: linear-gradient(135deg, #041627, #1A2B3C);
   color: #fff;
   padding: 3.5rem 1.5rem 3rem;
   text-align: center;
@@ -217,7 +221,7 @@ nav a:hover, nav a.active {
   margin-top: 2.25rem;
   margin-bottom: 0.6rem;
   padding-bottom: 0.4rem;
-  border-bottom: 2px solid #eff6ff;
+  border-bottom: 2px solid #e6f4ed;
 }
 
 .legal h2:first-child { margin-top: 0; }
@@ -250,13 +254,13 @@ nav a:hover, nav a.active {
 }
 
 .legal .info-box {
-  background: #eff6ff;
+  background: #e6f4ed;
   border-left: 4px solid var(--primary);
   border-radius: 0 0.5rem 0.5rem 0;
   padding: 1rem 1.25rem;
   margin: 1rem 0;
   font-size: 0.93rem;
-  color: #1e3a5f;
+  color: #003d1f;
 }
 
 /* ─── TOC ─── */
@@ -277,7 +281,7 @@ nav a:hover, nav a.active {
 
 /* ─── Footer ─── */
 footer {
-  background: var(--text);
+  background: var(--primary-bg);
   color: rgba(255,255,255,.6);
   text-align: center;
   padding: 2rem 1.5rem;

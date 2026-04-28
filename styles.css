@@ -212,7 +212,10 @@ nav a:hover, nav a.active {
   box-shadow: var(--shadow);
 }
 
-@media (max-width: 600px) { .legal { padding: 1.5rem 1.25rem; } }
+@media (max-width: 600px) {
+  .legal { padding: 1.5rem 1.25rem; }
+  .logo-text { display: none; }
+}
 
 .legal h2 {
   font-size: 1.35rem;

@@ -172,6 +172,7 @@ nav a:hover, nav a.active {
 
 .card-icon.blue { background: #e8eef5; color: var(--primary-bg); }
 .card-icon.green { background: #e6f4ed; color: var(--primary); }
+.card-icon.purple { background: #ede9fe; color: #5b21b6; }
 
 .card h2 { font-size: 1.2rem; font-weight: 700; }
 .card p  { color: var(--muted); font-size: 0.9rem; }

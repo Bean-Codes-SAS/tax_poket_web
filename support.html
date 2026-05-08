@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soporte – Tax Pocket</title>
+  <meta name="description" content="Centro de soporte de Tax Pocket. Encuentra respuestas a preguntas frecuentes, soluciona problemas y contacta a nuestro equipo." />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Support-specific styles */
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .support-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .support-card .card-icon { margin-bottom: 0.25rem; }
+    .card-icon.purple { background: #ede9fe; color: #5b21b6; }
+    .card-icon.orange { background: #fff7ed; color: #c2410c; }
+
+    .support-card h3 { font-size: 1.05rem; font-weight: 700; }
+    .support-card p  { color: var(--muted); font-size: 0.9rem; margin: 0; }
+    .support-card a.support-link {
+      margin-top: auto;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .support-card a.support-link:hover { text-decoration: underline; }
+
+    /* FAQ accordion */
+    .faq { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    details.faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    details.faq-item summary {
+      padding: 1.1rem 1.5rem;
+      font-weight: 600;
+      font-size: 0.97rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text);
+      user-select: none;
+    }
+
+    details.faq-item summary::-webkit-details-marker { display: none; }
+
+    details.faq-item summary::after {
+      content: '+';
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--primary);
+      transition: transform .2s;
+      flex-shrink: 0;
+    }
+
+    details.faq-item[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    details.faq-item .faq-body {
+      padding: 0 1.5rem 1.25rem;
+      color: #374151;
+      font-size: 0.93rem;
+      line-height: 1.7;
+    }
+
+    details.faq-item .faq-body p { margin-bottom: 0.6rem; }
+    details.faq-item .faq-body p:last-child { margin-bottom: 0; }
+    details.faq-item .faq-body ul { margin: 0.4rem 0 0.6rem 1.4rem; }
+    details.faq-item .faq-body li { margin-bottom: 0.3rem; }
+
+    .contact-box {
+      background: linear-gradient(135deg, var(--primary-bg) 0%, var(--primary-container) 100%);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      color: #fff;
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .contact-box h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .contact-box p  { opacity: .8; margin-bottom: 1.5rem; font-size: 0.95rem; }
+
+    .contact-box .btn-group { justify-content: center; }
+
+    .btn-green {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-green:hover { background: var(--primary-dark); }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <path d="M4 5.5C4 5.5 7.5 4 12 4s8 1.5 8 1.5V11c0 4.5-3 8.5-8 10-5-1.5-8-5.5-8-10V5.5z" fill="currentColor"/>
+          <path class="logo-check" d="M8.5 11.5l2.5 2.5 4.5-5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo-text">Tax Pocket</span>
+      </a>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="terms.html">Términos</a>
+        <a href="privacy.html">Privacidad</a>
+        <a href="support.html" class="active">Soporte</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="container">
+      <h1>Centro de Soporte</h1>
+      <p class="meta">Estamos aquí para ayudarte a sacar el máximo provecho de Tax Pocket</p>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="container">
+
+      <!-- Quick contact cards -->
+      <p class="section-label">Canales de atención</p>
+      <h2 class="section-title">¿Cómo podemos ayudarte?</h2>
+      <p class="section-sub">Elige el canal que mejor se adapte a tu necesidad.</p>
+
+      <div class="support-grid">
+
+        <div class="support-card">
+          <div class="card-icon blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <h3>Correo Electrónico</h3>
+          <p>Respuesta en menos de 48 horas hábiles. Ideal para consultas detalladas.</p>
+          <a href="mailto:soporte@beancodes.com" class="support-link">
+            soporte@beancodes.com
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="support-card">
+          <div class="card-icon purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <h3>Chat de Soporte</h3>
+          <p>Disponible dentro de la aplicación. Lunes a viernes, 8 a.m. – 6 p.m. (COT).</p>
+          <a href="mailto:soporte@beancodes.com" class="support-link">
+            Iniciar chat
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="support-card">
+          <div class="card-icon orange">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <h3>Reportar un Problema</h3>
+          <p>¿Encontraste un error en la app? Cuéntanos para solucionarlo rápidamente.</p>
+          <a href="mailto:soporte@beancodes.com?subject=Reporte%20de%20problema%20–%20Tax%20Pocket" class="support-link">
+            Enviar reporte
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- FAQ -->
+      <p class="section-label">Preguntas Frecuentes</p>
+      <h2 class="section-title">Respuestas rápidas</h2>
+      <p class="section-sub">Encuentra soluciones a los problemas más comunes.</p>
+
+      <div class="faq">
+
+        <details class="faq-item">
+          <summary>¿Cómo creo mi cuenta en Tax Pocket?</summary>
+          <div class="faq-body">
+            <p>Descarga la app desde la App Store o Google Play, abre la aplicación y toca <strong>"Crear cuenta"</strong>. Ingresa tu correo electrónico y crea una contraseña segura. Recibirás un correo de verificación; confírmalo y ¡listo!</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Olvidé mi contraseña, ¿cómo la recupero?</summary>
+          <div class="faq-body">
+            <p>En la pantalla de inicio de sesión, toca <strong>"¿Olvidaste tu contraseña?"</strong>. Ingresa tu correo registrado y te enviaremos un enlace para restablecerla. Revisa también tu carpeta de spam si no ves el correo.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Los cálculos de impuestos son oficiales?</summary>
+          <div class="faq-body">
+            <p>Tax Pocket es una <strong>herramienta de apoyo informático</strong>. Los cálculos son estimaciones basadas en la información que ingresas y la normativa vigente, pero no reemplazan la asesoría de un contador o la declaración oficial ante la DIAN.</p>
+            <p>El Usuario es el único responsable ante las autoridades tributarias.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Cómo cancelo mi suscripción?</summary>
+          <div class="faq-body">
+            <p>Puedes cancelar tu suscripción directamente desde la tienda donde la adquiriste:</p>
+            <ul>
+              <li><strong>App Store (iOS):</strong> Ajustes → [tu nombre] → Suscripciones → Tax Pocket → Cancelar.</li>
+              <li><strong>Google Play (Android):</strong> Play Store → Perfil → Pagos y suscripciones → Tax Pocket → Cancelar.</li>
+            </ul>
+            <p>Si tienes problemas, escríbenos a <a href="mailto:soporte@beancodes.com">soporte@beancodes.com</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Cómo solicito la eliminación de mis datos?</summary>
+          <div class="faq-body">
+            <p>De acuerdo con la Ley 1581 de 2012 (habeas data), puedes solicitar la eliminación de tus datos enviando un correo a <a href="mailto:soporte@beancodes.com">soporte@beancodes.com</a> con el asunto <strong>"Solicitud de eliminación de datos"</strong>. Procesaremos tu solicitud en un plazo máximo de 15 días hábiles.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Mis datos financieros están seguros?</summary>
+          <div class="faq-body">
+            <p>Sí. Utilizamos cifrado <strong>AES-256 en reposo</strong> y <strong>TLS 1.2+</strong> en tránsito. Tax Pocket <em>no</em> comparte tu información con la DIAN ni con terceros sin tu autorización. Consulta nuestra <a href="privacy.html">Política de Privacidad</a> para más detalles.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>La app no carga o muestra un error, ¿qué hago?</summary>
+          <div class="faq-body">
+            <p>Prueba los siguientes pasos en orden:</p>
+            <ul>
+              <li>Cierra la app completamente y vuelve a abrirla.</li>
+              <li>Verifica tu conexión a internet.</li>
+              <li>Actualiza la app a la versión más reciente desde la tienda.</li>
+              <li>Reinicia tu dispositivo.</li>
+            </ul>
+            <p>Si el problema persiste, escríbenos a <a href="mailto:soporte@beancodes.com?subject=Reporte%20de%20error%20–%20Tax%20Pocket">soporte@beancodes.com</a> indicando el modelo de tu dispositivo y la versión de la app.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Cómo contacto al soporte técnico?</summary>
+          <div class="faq-body">
+            <p>Puedes contactarnos por:</p>
+            <ul>
+              <li><strong>Correo:</strong> <a href="mailto:soporte@beancodes.com">soporte@beancodes.com</a></li>
+              <li><strong>Chat en la app:</strong> disponible de lunes a viernes, 8 a.m. – 6 p.m. (hora Colombia).</li>
+            </ul>
+            <p>Respondemos en un plazo máximo de <strong>48 horas hábiles</strong>.</p>
+          </div>
+        </details>
+
+      </div>
+
+      <!-- Contact CTA -->
+      <div class="contact-box">
+        <h2>¿No encontraste lo que buscabas?</h2>
+        <p>Nuestro equipo está listo para ayudarte. Escríbenos y te responderemos en menos de 48 horas hábiles.</p>
+        <div class="btn-group">
+          <a href="mailto:soporte@beancodes.com" class="btn btn-white">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            Enviar correo
+          </a>
+          <a href="mailto:soporte@beancodes.com?subject=Reporte%20de%20problema%20–%20Tax%20Pocket" class="btn btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            Reportar problema
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Inicio</a>
+      <a href="terms.html">Términos y Condiciones</a>
+      <a href="privacy.html">Política de Privacidad</a>
+      <a href="support.html">Soporte</a>
+    </div>
+    <p>&copy; 2026 Tax Pocket. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

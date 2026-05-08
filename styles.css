@@ -48,7 +48,7 @@
   --tp-night:      var(--tp-plum-900);
   --tp-night-2:    var(--tp-plum-700);
 
-  /* Tipografía */
+  /* Tipografía (Inter cargado vía @import; los demás se declaran para uso futuro) */
   --tp-font-display: "Instrument Serif", "Times New Roman", serif;
   --tp-font-body:    "Inter", -apple-system, system-ui, sans-serif;
   --tp-font-mono:    "JetBrains Mono", ui-monospace, monospace;

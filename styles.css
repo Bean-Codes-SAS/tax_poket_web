@@ -1,18 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 /* ─── Reset & Base ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ─── Tax Pocket — Design System Tokens v3 "Forest & Coin" ─── */
 :root {
-  --primary:        #006D37;
-  --primary-dark:   #004d27;
-  --primary-bg:     #041627;
-  --primary-container: #1A2B3C;
-  --secondary-container: #6BFE9C;
-  --accent:    #f59e0b;
-  --text:      #1f2937;
-  --muted:     #6b7280;
-  --bg:        #f9fafb;
-  --surface:   #ffffff;
-  --border:    #e5e7eb;
+  /* Brand color — Forest green */
+  --tp-sage-50:    #F1F8F2;
+  --tp-sage-100:   #DCEEDF;
+  --tp-sage-200:   #BADEC1;
+  --tp-sage-300:   #8FCA9E;
+  --tp-sage-400:   #5DAE76;
+  --tp-sage-500:   #1F7A3A;
+  --tp-sage-600:   #1A6731;
+  --tp-sage-700:   #155228;
+  --tp-sage-800:   #103E1F;
+  --tp-sage-900:   #0E2A18;
+
+  /* Forest deep (dark surfaces) */
+  --tp-plum-50:    #ECF4EE;
+  --tp-plum-100:   #D6E7DA;
+  --tp-plum-300:   #6A9479;
+  --tp-plum-500:   #2E5A3D;
+  --tp-plum-700:   #1F4528;
+  --tp-plum-900:   #0E2A18;
+
+  /* Ink (foreground) */
+  --tp-ink-900:    #1A1F1A;
+  --tp-ink-700:    #3A4239;
+  --tp-ink-500:    #65705F;
+  --tp-ink-300:    #B5BCAE;
+  --tp-ink-200:    #D2D8CC;
+  --tp-ink-100:    #E5E9DF;
+
+  /* Canvas (background) */
+  --tp-cream:      #F4EFE2;
+  --tp-paper:      #FBF8F1;
+  --tp-sand:       #ECE2C8;
+
+  /* Accents funcionales */
+  --tp-safe:       var(--tp-sage-500);
+  --tp-hold:       #F08A1F;
+  --tp-owed:       #C84F2C;
+  --tp-info:       #5C7A8C;
+
+  /* Surfaces oscuras (hero cards) */
+  --tp-night:      var(--tp-plum-900);
+  --tp-night-2:    var(--tp-plum-700);
+
+  /* Tipografía */
+  --tp-font-display: "Instrument Serif", "Times New Roman", serif;
+  --tp-font-body:    "Inter", -apple-system, system-ui, sans-serif;
+  --tp-font-mono:    "JetBrains Mono", ui-monospace, monospace;
+
+  /* ─── Aliases de compatibilidad ─── */
+  --primary:        var(--tp-sage-500);
+  --primary-dark:   var(--tp-sage-600);
+  --primary-bg:     var(--tp-plum-900);
+  --primary-container: var(--tp-plum-700);
+  --secondary-container: var(--tp-sage-300);
+  --accent:    var(--tp-hold);
+  --text:      var(--tp-ink-900);
+  --muted:     var(--tp-ink-500);
+  --bg:        var(--tp-cream);
+  --surface:   var(--tp-paper);
+  --border:    var(--tp-ink-200);
   --radius:    0.75rem;
   --shadow:    0 4px 24px rgba(0,0,0,.08);
   --max-w:     860px;
@@ -21,7 +73,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: var(--tp-font-body);
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
@@ -59,7 +111,6 @@ header {
 }
 
 .logo svg { color: var(--secondary-container); }
-.logo-check { stroke: var(--primary-bg); }
 
 nav { display: flex; gap: 0.25rem; }
 
@@ -80,7 +131,7 @@ nav a:hover, nav a.active {
 
 /* ─── Hero (index only) ─── */
 .hero {
-  background: linear-gradient(135deg, #041627 0%, #1A2B3C 55%, #041627 100%);
+  background: linear-gradient(135deg, #0E2A18 0%, #1F4528 55%, #0E2A18 100%);
   color: #fff;
   text-align: center;
   padding: 5rem 1.5rem 4rem;
@@ -170,9 +221,9 @@ nav a:hover, nav a.active {
   justify-content: center;
 }
 
-.card-icon.blue { background: #e8eef5; color: var(--primary-bg); }
-.card-icon.green { background: #e6f4ed; color: var(--primary); }
-.card-icon.purple { background: #ede9fe; color: #5b21b6; }
+.card-icon.blue { background: var(--tp-plum-50); color: var(--tp-plum-700); }
+.card-icon.green { background: var(--tp-sage-50); color: var(--primary); }
+.card-icon.purple { background: var(--tp-sage-100); color: var(--tp-sage-700); }
 
 .card h2 { font-size: 1.2rem; font-weight: 700; }
 .card p  { color: var(--muted); font-size: 0.9rem; }
@@ -189,7 +240,7 @@ nav a:hover, nav a.active {
 
 /* ─── Page layout (terms / privacy) ─── */
 .page-hero {
-  background: linear-gradient(135deg, #041627, #1A2B3C);
+  background: linear-gradient(135deg, #0E2A18, #1F4528);
   color: #fff;
   padding: 3.5rem 1.5rem 3rem;
   text-align: center;
@@ -225,7 +276,7 @@ nav a:hover, nav a.active {
   margin-top: 2.25rem;
   margin-bottom: 0.6rem;
   padding-bottom: 0.4rem;
-  border-bottom: 2px solid #e6f4ed;
+  border-bottom: 2px solid var(--tp-sage-100);
 }
 
 .legal h2:first-child { margin-top: 0; }
@@ -238,39 +289,39 @@ nav a:hover, nav a.active {
   color: var(--text);
 }
 
-.legal p { margin-bottom: 0.9rem; color: #374151; }
+.legal p { margin-bottom: 0.9rem; color: var(--tp-ink-700); }
 
 .legal ul, .legal ol {
   margin: 0.5rem 0 0.9rem 1.5rem;
-  color: #374151;
+  color: var(--tp-ink-700);
 }
 
 .legal li { margin-bottom: 0.35rem; }
 
 .legal .highlight-box {
-  background: #fefce8;
-  border-left: 4px solid var(--accent);
+  background: #FFF3E0;
+  border-left: 4px solid var(--tp-hold);
   border-radius: 0 0.5rem 0.5rem 0;
   padding: 1rem 1.25rem;
   margin: 1rem 0;
   font-size: 0.93rem;
-  color: #78350f;
+  color: #7C3B00;
 }
 
 .legal .info-box {
-  background: #e6f4ed;
+  background: var(--tp-sage-50);
   border-left: 4px solid var(--primary);
   border-radius: 0 0.5rem 0.5rem 0;
   padding: 1rem 1.25rem;
   margin: 1rem 0;
   font-size: 0.93rem;
-  color: #003d1f;
+  color: var(--tp-sage-800);
 }
 
 /* ─── TOC ─── */
 .toc {
-  background: #f8fafc;
-  border: 1px solid var(--border);
+  background: var(--tp-sage-50);
+  border: 1px solid var(--tp-sage-100);
   border-radius: 0.6rem;
   padding: 1.25rem 1.5rem;
   margin-bottom: 2rem;

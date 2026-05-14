@@ -37,6 +37,7 @@
   --tp-cream:      #F4EFE2;
   --tp-paper:      #FBF8F1;
   --tp-sand:       #ECE2C8;
+  --tp-white:       #FFFFFF;
 
   /* Accents funcionales */
   --tp-safe:       var(--tp-sage-500);
@@ -82,7 +83,8 @@ body {
 
 /* ─── Nav ─── */
 header {
-  background: var(--primary-bg);
+  /* background: var(--primary-bg); */
+  background: var(--surface);
   border-bottom: 1px solid var(--primary-container);
   position: sticky;
   top: 0;
@@ -105,7 +107,7 @@ header {
   align-items: center;
   gap: 0.55rem;
   text-decoration: none;
-  color: #fff;
+  color: var(--primary);
   font-weight: 700;
   font-size: 1.15rem;
 }
@@ -116,7 +118,8 @@ nav { display: flex; gap: 0.25rem; }
 
 nav a {
   text-decoration: none;
-  color: rgba(255,255,255,.65);
+  /* color: rgba(255,255,255,.65); */
+  color: var(--primary-bg);
   font-size: 0.9rem;
   font-weight: 500;
   padding: 0.45rem 0.9rem;
@@ -266,7 +269,7 @@ nav a:hover, nav a.active {
 
 @media (max-width: 600px) {
   .legal { padding: 1.5rem 1.25rem; }
-  .logo-text { display: none; }
+  .logo-text { display: none;}
 }
 
 .legal h2 {
